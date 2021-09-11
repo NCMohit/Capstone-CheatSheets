@@ -1,4 +1,4 @@
-## Docker CheatSheet  
+## Capstone CheatSheet  
   
 This is a compilation of all commands used in Developer Operations applications, which I have learnt so far.  
   
