@@ -14,7 +14,8 @@ docker run <img_name>	-	downloads an image and runs a container
 				-t	open tty terminal  
 				-d	detach and run in background
 				-e  manipulate the environment variables  
-				-p <ext_port>:<intern_port>	publish port  
+
+docker run -p <ext_port>:<intern_port> <img_name>   -  publish port 
 docker start <container_name>	-	Start existing container  
 docker attach <container_name>	-	Open terminal of running container  
 docker exec <container_name> <cmd>	-	Just run command in container  
