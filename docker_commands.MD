@@ -1,8 +1,13 @@
-### Installation
+## Installation
 ```
 pacman -S docker / apt-get install docker  
 systemctl enable docker  
-systemctl start docker  
+systemctl start docker
+
+# Prerequisite
+
+docker login	-	login into dockerhub to push/pull images
+
 ```
 ## Usage
 ```
@@ -13,7 +18,7 @@ docker run <img_name>	-	downloads an image and runs a container
 				-i	interactive shell  
 				-t	open tty terminal  
 				-d	detach and run in background
-				-e  manipulate the environment variables  
+				-e  	manipulate the environment variables  
 				-p <ext_port>:<intern_port>	publish port  
 docker start <container_name>	-	Start existing container  
 docker attach <container_name>	-	Open terminal of running container  
@@ -26,7 +31,14 @@ docker rmi <image_name>		-	Remove image (remove dep containers first)
 docker build <path>	-	Build image from existing image ( Path must have a docker file )  
 				-t	Give a nametag to image  
 ```
-# Docker file format
+## System
+```
+docker stats		-	Live stream of container resource usage
+docker system df	-	Docker disk usage
+docker system events	-	Live stream of events
+docker system prune	-	Remove unused data ( stopped containers, older builds of images )
+```
+## Docker file format
 ```
 FROM <img>:<version>  
 COPY <path> <path_in_container>  
@@ -43,7 +55,7 @@ docker volume ls	-	List of all volumes
 docker volume create <name>	-	Creates new volume space  
 docker volume inspect <vol_name>	-	Attributes of volume  
 ```
-# Usage
+### Usage
 ```
 docker run .... -v <vol_name>:<path_in_container> <img_name> ...	-	Will sync files in the path to volume  
 OR  
@@ -64,7 +76,7 @@ docker-machine ls	-	See all machines, their IPs
   
 docker-machine ssh <machine_name>	-	SSH into created machines  
 ```
-# Inside manager  
+### Inside manager  
 ```
 docker swarm init --advertise-addr <ip_of_manager>	-	Create a swarm  
 docker node ls						-	See all machines in swarm ( Only works in manager )  
@@ -84,7 +96,7 @@ docker swarm leave			-	Make machine leave swarm
 docker-machine stop <machine_name>	-	Stops machine  
 docker-machine rm <machine_name>	-	Removes machine  
 ```
-# Docker network
+## Docker network
 ```
 docker network create <network-name>	-	used in connecting multiple container within docker  
 docker network ls			-	lists all networks  
@@ -93,7 +105,7 @@ docker network ls			-	lists all networks
 
 pacman -S docker-compose / apt-get install docker-compose  
   
-# your-docker-compose-file.yaml		-	installation  
+### your-docker-compose-file.yaml		-	installation  
 
 ```
 version: <version>  
