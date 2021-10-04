@@ -1,6 +1,6 @@
 ## Installation
 ```
-pacman -S docker / apt-get install docker  
+pacman -S docker / ( Install docker from snap store in ubuntu )
 systemctl enable docker  
 systemctl start docker
 
@@ -20,11 +20,11 @@ docker run <img_name>	-	downloads an image and runs a container
 				-d	detach and run in background
 				-e  	manipulate the environment variables  
 				-p <ext_port>:<intern_port>	publish port  
-docker start <container_name>	-	Start existing container  
-docker attach <container_name>	-	Open terminal of running container  
+docker start <container_name>		-	Start existing container  
+docker attach <container_name>		-	Open terminal of running container  
 docker exec <container_name> <cmd>	-	Just run command in container  
-docker rm <container_name>	-	Remove container  
-docker rmi <image_name>		-	Remove image (remove dep containers first)  
+docker rm <container_name>		-	Remove container  
+docker rmi <image_name>			-	Remove image (remove dep containers first)  
   
 # Building image  
   
